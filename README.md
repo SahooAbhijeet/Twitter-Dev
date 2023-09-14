@@ -1,5 +1,7 @@
 ## REQUIREMENTS
 
+<img src= "https://www.google.com/imgres?imgurl=https%3A%2F%2Fassets.stickpng.com%2Fimages%2F580b57fcd9996e24bc43c53e.png&tbnid=Ga0XAWLzNnBbLM&vet=12ahUKEwjxip3jmIyBAxV22jgGHTF5D4EQMygBegQIARBc..i&imgrefurl=https%3A%2F%2Fwww.stickpng.com%2Fimg%2Ficons-logos-emojis%2Ftech-companies%2Ftwitter-logo&docid=-LqzAnO-Dbw0uM&w=1687&h=1687&q=twitter%20logo%20png%20download&ved=2ahUKEwjxip3jmIyBAxV22jgGHTF5D4EQMygBegQIARBc">
+
 - User should be able to create a post
     - [The post/tweet cannot be more than 250 characters]
     - [Every post/tweet will be having support for image upload]
