@@ -1,6 +1,10 @@
 import Hashtag from "../models/hashtags.js";
+import CrudRepository from "./crud-repository.js";
 
-class HashtagRepository {
+class HashtagRepository extends CrudRepository{
+    constructor() {
+        super(Hashtag);
+    }
 
     async create(data){
         try {
@@ -15,24 +19,6 @@ class HashtagRepository {
         try {
             const tags = await Hashtag.insertMany(data);
             return tags; 
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    async destroy(id){
-        try {
-            const response = await Hashtag.findByIdAndDelete(id);
-            return response;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    async get(id){
-        try {
-            const tag = await Hashtag.findById(id);
-            return tag;
         } catch (error) {
             console.log(error);
         }
