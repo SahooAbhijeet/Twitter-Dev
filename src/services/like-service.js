@@ -1,4 +1,5 @@
-import { LikeRepository, TweetRepository } from "../repository/index";
+import { LikeRepository, TweetRepository } from "../repository/index.js";
+import Tweet from "../models/tweet.js";
 
 class LikeService {
 
@@ -9,23 +10,24 @@ class LikeService {
 
     async toggleLike(modelId, modelType, userId) {
         if(modelType == 'Tweet') {          //api/v1/likes/toggle?id=modelId&type=Tweet
-            var likeable = await this.tweetRepository.get(modelId).populate('likes');
+            var likeable = await this.tweetRepository.find(modelId);
         }
         else if (modelType == 'Comment') {
             //TODO
+        } else {
+            throw new Error('unknown model type');
         }
-        else {
-            throw new Error ('unknown model type');
-        }
-        const exist = await this.likeRepository.findByUserAndLikeable({
-            user: userId,
+        console.log("beyound");
+        const exists = await this.likeRepository.findByUserAndLikeable({
+            user: userId, 
             onModel: modelType,
             likeable: modelId
         });
-        if(exist) {
-            likeable.likes.pull(exist.id)
+        if(exists) {
+            likeable.likes.pull(exists.id);
             await likeable.save();
-            await exist.remove();
+            await exists.remove();
+
             var isRemoved = true;
         } else {
             const newLike = await this.likeRepository.create({
@@ -35,6 +37,7 @@ class LikeService {
             });
             likeable.likes.push(newLike);
             await likeable.save();
+
             var isRemoved = false;
         }
         return isRemoved;
