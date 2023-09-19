@@ -5,16 +5,7 @@ class HashtagRepository extends CrudRepository {
     constructor() {
         super(Hashtag);
     }
-
-    async create(data){
-        try {
-            const tag = await Hashtag.create(data);
-            return tag;
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
+    
     async bulkCreate(data) {
         try {
             const tags = await Hashtag.insertMany(data);

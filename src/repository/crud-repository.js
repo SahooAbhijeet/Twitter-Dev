@@ -39,7 +39,7 @@ class CrudRepository {
 
     async getAll() {
         try {
-            const result = await this.model.findAll({});
+            const result = await this.model.find({});
             return result;
         } catch (error) {
             console.log("Something went wrong in the crud-repo");
@@ -47,9 +47,9 @@ class CrudRepository {
         }
     } 
 
-    async update(data, id) {
+    async update(id, data) {
         try {
-            const result = await this.model.findByIdAndUpdate(data, id, {new: true});
+            const result = await this.model.findByIdAndUpdate(id, data, {new: true});
             return result;
         } catch (error) {
             console.log("Something went wrong in the crud-repo");
