@@ -1,6 +1,7 @@
 ## REQUIREMENTS
 
-<img src= "https://unsplash.com/photos/blue-and-white-heart-illustration-k1xf2D7jWUs">
+![alexander-shatov-k1xf2D7jWUs-unsplash](https://github.com/SahooAbhijeet/Twitter-Dev/assets/99554532/322c388a-37f1-4c36-bd19-b4003f27bec2)
+
 
 - User should be able to create a post
     - [The post/tweet cannot be more than 250 characters]
