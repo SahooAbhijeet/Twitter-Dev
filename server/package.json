@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon src/index.js"
+    "dev": "npx nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/SahooAbhijeet/Twitter-Dev#readme",
   "dependencies": {
     "aws-sdk": "^2.1461.0",
+    "axios": "^1.6.2",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dot": "^1.1.3",

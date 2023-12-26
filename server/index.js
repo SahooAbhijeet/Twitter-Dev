@@ -1,10 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import { connect } from './config/database.js';
-import apiRoutes from "./routes/index.js";
+import { connect } from './src/config/database.js';
+import apiRoutes from "./src/routes/index.js";
 import passport from 'passport';
 
-import { passportAuth } from "./config/jwt-middleware.js";
+import { passportAuth } from "./src/config/jwt-middleware.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -17,7 +17,7 @@ app.use('/api', apiRoutes);
 
 
 app.listen(3000, async () => {
-    console.log(`Server started`);
+    console.log(`Server started on `);
     await connect();
     console.log('MongoDB connected');
 });     
