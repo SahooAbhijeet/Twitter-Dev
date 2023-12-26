@@ -14,6 +14,9 @@ app.use(passport.initialize());
 passportAuth(passport);
 
 app.use('/api', apiRoutes);
+app.use('/', (req,res) => {
+    res.json({message: 'kjdnj'})
+})
 
 
 app.listen(3000, async () => {
